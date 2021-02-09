@@ -1,0 +1,31 @@
+@media screen and (max-width:699px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        margin:auto;
+        box-sizing: content-box;
+        width: 100%;
+        max-width: 1440px;
+        font-family: 'Raleway', sans-serif;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff;
+        -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);
+    }
+    #logo{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    #logo img {
+        width: 200px;
+    }
+    
+
+}
