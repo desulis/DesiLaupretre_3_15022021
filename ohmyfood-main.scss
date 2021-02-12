@@ -7,6 +7,13 @@ $color_background_1:#fff;
 $color_background_2:#f1f1f1;
 $color_background_3:#e9e9e9;
 
+@mixin body {
+    margin:auto;
+    box-sizing: content-box;
+    width: 100%;
+    @include flex_mobile;
+}
+
 @mixin typography_title {
     font-family: 'Roboto';
     font-size: 28px;
@@ -33,12 +40,30 @@ $color_background_3:#e9e9e9;
     font-weight: 400;
     color: black;
 }
+@mixin typography_symbol {
+    font-family: 'Shrikhand';
+    font-size: 15px;
+    color: $color_netral;
+}
+@mixin typography_footer {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: $color_netral;
+}
 @mixin flex_dekstop {
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
+@mixin ahref {
+    display: flex;
+    @include typography_textbold;
+    border:none;
+    text-decoration: none;
+    margin: 0;
+    gap: 20px;
+}
 @mixin flex_mobile {
     display: flex;
     flex-direction: column;
@@ -51,7 +76,7 @@ $color_background_3:#e9e9e9;
 }
 
 @mixin box {
-    -webkit-box-shadow: 0 0 20px rgb(196, 196, 196);
+    @include shadow();
     border-radius: 15px;
 }
 
@@ -59,14 +84,34 @@ $color_background_3:#e9e9e9;
     border-style: solid 1px #9356DC;
     border-radius: 25px;
     padding: 10px;
-    -webkit-box-shadow: 0 0 20px rgb(196, 196, 196);
+    @include shadow();
+}
+@mixin box-menu {
+    background-color:#ffffff ;
+    border-radius: 25px;
+    padding: 7px;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);    
+}
+
+@mixin image-menu {
+    display: flex;
+    flex: 2;
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: 50% 30%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+}
+@mixin mobile-only {
+    @media screen and (max-width: 599px) {@content;}
 }
 
 body {
-    margin:auto;
-    box-sizing: content-box;
-    max-width: 1440px;
-    @include flex_mobile;
+    @include body();
 }
 header {
     @include flex_dekstop;     
@@ -113,9 +158,23 @@ header {
         }
     }        
 }
-#filters {       
+#filters {  
+    background-color: $color_background_1;
+    padding: 10px; 
+    @include flex_mobile;
+    h2 {
+        text-align: center;
+        padding-left:10px;
+        @include mobile-only {
+            text-align: left;
+        }
+    }    
     ul  {
+        padding: 10px;
         @include flex_dekstop;
+        @include mobile-only {
+            @include flex_mobile;            
+        }
         gap: 15px;
         li {
             @include flex_dekstop;
@@ -123,18 +182,87 @@ header {
             list-style-type: none;
             padding: 20px;
             background-color:$color_background_2;
+            @include mobile-only {
+                @include flex_mobile;
+                align-items: stretch;
+            }
             a, button, p {
-                @include flex_dekstop;
-                @include typography_textbold;
-                border:none;
-                text-decoration: none;
-                margin: 0;
-                gap: 20px;
+                @include ahref;
                 i.fas {
                     color: $color_grey;
                 }
             }
         }
     }
+}
+#restaurant { 
+    background-color: $color_background_3;
+    padding: 20px; 
+    @include flex_mobile;
+    h2 {
+        text-align: center;
+        margin: 0;
+        @include mobile-only {
+            text-align: left;
+        }
+    }
+    @include mobile-only {
+        @include flex_mobile;
+    }
+    gap: 30px;
+    #listmenu {
+        flex-wrap: wrap;
+        @include flex_dekstop;
+        @include mobile-only {
+            @include flex_mobile;
+        }
+        gap: 30px;
+        .menu {
+            @include flex_mobile;
+            @include box-menu;
+            flex: 1 0 0;
+            .menuimg {
+                img {
+                    @include image-menu;
+                }                
+                position: relative; 
+                .newmenu {
+                    background-color: $color_tertiary;
+                    color:#00daa3 ;
+                    @include shadow();
+                    position: absolute;
+                    top: 13px;
+                    right: 13px;
+                }              
+            } 
+                        
+        }        
+    }
+}
+footer {
+    background-color: rgb(63, 63, 63);
+    padding: 20px;
+    .footertitle {
+        @include typography_symbol;        
+    }
+    .footerlist {
+        display: flex;                   
+        ul {  
+            display: flex;
+            justify-content: space-between; 
+            flex-direction: column;         
+            padding: 0;            
+            list-style-type: none; 
+            text-align: left; 
+            li a {
+                @include ahref;
+                color: $color_netral;
+                i.fas {
+                    @include flex_mobile;
+                }
+            }         
+        }
+    }
+
 }
 
