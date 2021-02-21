@@ -1,0 +1,12 @@
+header {
+    @include flex_dekstop;     
+    background-color: $color_background_1;
+    @include shadow;   
+    padding:20px;
+}
+.logo {
+    @include flex_mobile;
+    &__img {
+        width: 200px;
+    }
+}

@@ -1,10 +1,9 @@
 {
   "name": "ohmyfood",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./ohmyfood-main.scss:./ohmyfood-main.css"
+    "sass": "sass --watch ./ohmyfood-menu.scss:./ohmyfood-menu.css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +14,6 @@
   "bugs": {
     "url": "https://github.com/desulis/Projet-3_OhMyFood/issues"
   },
-  "homepage": "https://github.com/desulis/Projet-3_OhMyFood#readme"
+  "homepage": "https://github.com/desulis/Projet-3_OhMyFood#readme",
+  "description": ""
 }

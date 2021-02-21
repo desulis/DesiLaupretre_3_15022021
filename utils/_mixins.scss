@@ -1,0 +1,102 @@
+@mixin body {
+    margin:auto;
+    box-sizing: content-box;
+    width: 100%;
+    @include flex_mobile;
+}
+
+@mixin typography_title {
+    font-family: 'Roboto';
+    font-size: 28px;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+}
+@mixin typography_sub {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    color: #777777;
+    text-align: center;
+}
+@mixin typography_text {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 300;
+    color: black;
+}
+@mixin typography_textbold {
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+}
+@mixin typography_symbol {
+    font-family: 'Shrikhand';
+    font-size: 15px;
+    color: $color_netral;
+}
+@mixin typography_footer {
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: $color_netral;
+}
+@mixin flex_dekstop {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin ahref {
+    display: flex;
+    @include typography_textbold;
+    border:none;
+    text-decoration: none;
+    margin: 0;
+    gap: 20px;
+}
+@mixin flex_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin shadow {
+    -webkit-box-shadow: 0 0 20px rgb(196, 196, 196);
+}
+
+@mixin box {
+    @include shadow();
+    border-radius: 15px;
+}
+
+@mixin button_border {
+    border-style: solid 1px #9356DC;
+    border-radius: 25px;
+    padding: 10px;
+    @include shadow();
+}
+@mixin box-menu {
+    background-color:#ffffff ;
+    border-radius: 25px;
+    padding: 7px;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);    
+}
+
+@mixin image-menu {
+    display: flex;
+    flex: 3;
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: 50% 30%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+}
+@mixin mobile-only {
+    @media screen and (max-width: 599px) {@content;}
+}
