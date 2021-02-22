@@ -1,0 +1,38 @@
+
+@keyframes menu{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        }
+}
+
+@keyframes body {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes progress-animation {
+    0% {width: 0%;}
+    20% {width: 10%;}
+    40% {width: 30%;}
+    50% {width: 60%;}
+    98% {width: 98%;}
+
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -72,6 +72,50 @@ footer .footerlist ul li a i.fas {
   align-content: center;
 }
 
+@keyframes menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes body {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 10%;
+  }
+  40% {
+    width: 30%;
+  }
+  50% {
+    width: 60%;
+  }
+  98% {
+    width: 98%;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 body {
   margin: auto;
   box-sizing: content-box;
@@ -126,11 +170,6 @@ main {
   align-items: center;
   gap: 30px;
 }
-@media screen and (max-width: 599px) {
-  .title__name {
-    border-radius: 25% 25% 0 0;
-  }
-}
 .title__name h2 {
   font-family: "Shrikhand";
   font-size: 15px;
@@ -138,6 +177,13 @@ main {
   color: black;
   font-size: 30px;
   font-weight: lighter;
+}
+@media screen and (max-width: 599px) {
+  .title__name {
+    border-radius: 35px 35px 0 0;
+    margin-top: -50px;
+    background-color: #e9e9e9;
+  }
 }
 
 .menu {
@@ -161,6 +207,8 @@ main {
   align-content: center;
   gap: 30px;
   padding: 0 20px;
+  overflow: hidden;
+  animation: menu 1500ms;
 }
 .menu__detail__title {
   font-weight: 400;
@@ -168,7 +216,6 @@ main {
 }
 .menu__detail__list {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-content: center;
   -webkit-box-shadow: 0 0 20px #c4c4c4;
@@ -176,19 +223,72 @@ main {
   list-style-type: none;
   padding: 0 20px;
   background-color: #f1f1f1;
+  cursor: pointer;
+  overflow: hidden;
+  animation: menu 1000ms ease-in;
 }
-.menu__detail__list--description h3 {
+.menu__detail__list--1 {
+  animation-delay: 111.1111111111ms;
+}
+.menu__detail__list--2 {
+  animation-delay: 222.2222222222ms;
+}
+.menu__detail__list--3 {
+  animation-delay: 333.3333333333ms;
+}
+.menu__detail__list--4 {
+  animation-delay: 444.4444444444ms;
+}
+.menu__detail__list--5 {
+  animation-delay: 555.5555555556ms;
+}
+.menu__detail__list--6 {
+  animation-delay: 666.6666666667ms;
+}
+.menu__detail__list--7 {
+  animation-delay: 777.7777777778ms;
+}
+.menu__detail__list--8 {
+  animation-delay: 888.8888888889ms;
+}
+.menu__detail__list--9 {
+  animation-delay: 1000ms;
+}
+.menu__detail--name {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.menu__detail--description h3 {
   margin-bottom: 0;
 }
-.menu__detail__list--price {
+.menu__detail--price {
   display: flex;
   justify-content: center;
   align-content: center;
   justify-content: space-between;
 }
+.menu__detail--check:hover + i.fas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: #99E2D0;
+  flex: 1;
+  justify-content: flex-end;
+  animation: menu 1000ms 150ms;
+}
+.menu__detail--check i.fas {
+  color: #fff;
+  overflow: hidden;
+  transform: scale(0.1) rotate(-90deg);
+  transition: transform 330ms ease-in-out;
+}
 
 .order {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .order__btn {
   display: flex;

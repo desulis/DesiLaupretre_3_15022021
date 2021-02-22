@@ -3,11 +3,46 @@
 @import "./layout/header";
 @import "./components/buttons";
 @import "./layout/footer";
+@import "./components/keyframes";
 
-body {
-    @include body();
+.page {
+    @include body;
+    opacity: 1;
+    animation: body 1s 2s both;
 }
-
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    animation: loader 1.8s forwards;
+    .progress {    
+        display: flex;
+        height: 10px;
+        width: 100%;
+        max-width: 320px;
+        box-shadow: inset 0px 0px 0px 1px #C8C8CD;
+        border-radius: 50px;
+        overflow: hidden;
+        &__bar {
+            display: flex;
+            height: 100%;
+            width: 98%;
+            background: #409be9;
+            animation: progress-animation 1s 0.8s both;
+            transform-origin: left;        
+        }
+    }   
+}
+body {
+    margin: 0;
+}
 .nav {
     @include flex_mobile;
     background-color: $color_background_2;
