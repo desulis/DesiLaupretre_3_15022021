@@ -55,17 +55,22 @@ main {
     }
 }
 .menu {
+    width: 100%;
     @include flex_dekstop;
     @include mobile-only {
         @include flex_mobile;
     }
     gap: 30px;
     &__detail {
-        @include flex_mobile;
-        gap: 30px;
-        padding: 0 20px; 
-        overflow: hidden;
-        animation: menu 1500ms; 
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch; 
+        gap: 20px;       
+        animation: menu 1500ms;
+        @include mobile-only {
+        padding: 0 20px;
+        } 
         &__title {
             font-weight: 400;
             margin: 0;
@@ -73,58 +78,84 @@ main {
         &__list {
             @include flex_dekstop;
             @include box;
+            padding: none;
+            width: 350px;
             list-style-type: none;
-            padding: 0 20px;
-            background-color: $color_background_2;
-            cursor: pointer;
             overflow: hidden;
+            background-color: $color_background_2;
+            cursor: pointer;            
             animation: menu $anim-dur ease-in;
-            @for $i from 1 through $num-bars {
-                &--#{$i} {
-                animation-delay: $anim-delay * $i;
-                }
-            }        
+            @include mobile-only {
+                justify-content: stretch;
+                align-items: stretch;
+                width: 100%;
             }
-            &--name{
-                flex: 3;
-                @include flex_mobile;
-            } 
-            &--description h3{
-                margin-bottom: 0;
-            }
-            &--price {
-                @include flex_dekstop;
-                justify-content: space-between;
-            }
-            &--check {
-                &:hover + i.fas {
-                @include flex_mobile;
+            &__check {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 0;
+                overflow: hidden;
                 background-color: $color_tertiary;
-                flex:1;
-                justify-content: flex-end;
-                animation: menu 1000ms 150ms;
-                } 
-                i.fas {
+                transition: width 0.5s;
+                i.fas {  
+                    font-size: 20px;
+                    transition: transform 500ms ease-in-out;         
                     color: $color_netral;
-                    overflow: hidden;
-                    transform: scale(.1) rotate(-90deg);
-                    transition: transform 330ms ease-in-out;
+                    border-radius: 50%;
                 }               
             }           
+            &:hover &__check {
+                width: 70px;
+                i.fas {
+                    transform: rotate(360deg);
+                }    
+            }
+            &__name{
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                padding: 0 20px;
+                &__description{
+                    display: flex;
+                    flex-direction: column;
+                    flex: 3;
+                    justify-content: baseline;
+                    align-items: baseline;
+                    h3 {
+                        margin-bottom: 0;
+                    }
+                }
+                &__price {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    margin: 1em 0;
+                }
+            }            
         }
     }
+}
 .order {
-    margin-top: 40px;
+    overflow: hidden;
+    position: relative;   
     &__btn {
         @include flex_dekstop;
-        padding-bottom: 30px;
+        padding: 30px 0;
+        margin-top: 20px;
         button {  
-            background-color:$color_primary;
+            background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
             color: $color_netral;
+            border: transparent;
             @include shadow;
             @include button_border; 
-            padding: 10px 30px;
-            margin-bottom: 30px;              
+            padding: 20px 60px;
+            margin-bottom: 30px;
+            transition: transform 350ms;
+            &:hover {
+                transform: scale(1.13);
+                background-image: linear-gradient(to bottom right, #fc90dd, #a979e4);
+            }                      
         }
     }        
 }

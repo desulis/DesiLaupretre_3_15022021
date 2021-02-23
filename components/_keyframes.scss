@@ -36,3 +36,12 @@
         opacity: 0;
     }
 }
+
+@keyframes check {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

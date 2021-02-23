@@ -74,16 +74,26 @@ body {
         }
     }
     &__explore-button {
+        overflow: hidden;
+        position: relative;
         @include flex_dekstop;
-        padding-bottom: 30px;
+        padding: 30px 0;
         button {  
-            background-color:$color_primary;
+            background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
             color: $color_netral;
+            border: transparent;
             @include shadow;
-            @include button_border;                
+            @include button_border; 
+            padding: 10px 30px;
+            margin-bottom: 30px;
+            transition: transform 350ms;
+            &:hover {
+                transform: scale(1.12);
+                background-image: linear-gradient(to bottom right, #fc86da, #a16edf);
+            }           
         }
     }        
-}
+}        
 .filters {  
     background-color: $color_background_1;
     padding: 10px; 
