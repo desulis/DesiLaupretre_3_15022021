@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-    <html lang="fr">        
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>OhMyFood!</title>
-            <link rel="stylesheet" href="ohmyfood-main.css"/>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />        
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+<html lang="fr">        
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OhMyFood!</title>
+        <link rel="stylesheet" href="ohmyfood-main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-        </head>
-       
-        <body>
-            <div class="loader">
-                <div class="progress">
-                    <div class="progress__bar"></div>
-                </div>
+    </head>       
+    <body>
+        <div class="loader">
+            <div class="progress">
+                <div class="progress__bar"></div>
             </div>
-            <div class="page">
+        </div>
+        <div class="page">
             <header>
                 <div class="logo">
                     <img class="logo__img" src="images\logo\ohmyfood.png" alt="ohmyfood">
@@ -27,19 +26,17 @@
 
             <main>
                 <section class="nav">
-                    <nav>
-                        <div class="nav__location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p class="nav__location__paris">Paris, Belleville</p>
-                        </div>
-                        <div class="nav__description">
-                            <h1>Réservez le menu qui vous convient</h1>
-                            <p>Découvrez des restaurants d'exeption, séléctionnés par nos soins.</p>
-                        </div>
-                        <div class="nav__explore-button">
-                            <button type="button" >Explorer nos restaurants</button>
-                        </div>
-                    </nav>
+                    <div class="nav__location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p class="nav__location__paris">Paris, Belleville</p>
+                    </div>
+                    <div class="nav__description">
+                        <h1>Réservez le menu qui vous convient</h1>
+                        <p>Découvrez des restaurants d'exeption, séléctionnés par nos soins.</p>
+                    </div>
+                    <div class="nav__explore">
+                        <button type="button" >Explorer nos restaurants</button>
+                    </div>
                 </section>
 
                 <section class="filters">
@@ -49,21 +46,21 @@
                             <li>
                                 <div class="number">1</div>
                                 <a href="#">                                
-                                <button type="button"><i class="fas fa-mobile-alt"></i></button>
+                                <i class="fas fa-mobile-alt"></i>
                                 <p>Choisissez un restaurant</p>
                                 </a>
                             </li>
                             <li>
                                 <div class="number">2</div>
                                 <a href="#">
-                                <button type="button"><i class="fas fa-list-ul"></i></button>
+                                <i class="fas fa-list-ul"></i>
                                 <p>Composez votre menu</p>
                                 </a>
                             </li>
                             <li>
                                 <div class="number">3</div>
                                 <a href="#">
-                                <button type="button"><i class="fas fa-store"></i></button>
+                                <i class="fas fa-store"></i>
                                 <p>Dégustez au restaurant</p>
                                 </a>
                             </li>
@@ -75,7 +72,7 @@
                         <h2>Restaurant</h2>
                     <div class="restaurant__list-menu">
                         <div class="menu">
-                            <a href="#">
+                            <a href="OhMyFood-Menu1.html">
                                 <div class="menu__img">
                                     <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
                                     <div class="menu__img__new">Nouveau</div>                                  
@@ -86,13 +83,14 @@
                                         <p>Ménilmontant</p>
                                     </div>
                                     <div class="menu__name__like">
+                                        <i class="far fa-heart"></i>
                                         <i class="fas fa-heart"></i>
                                     </div>
                                 </div>                                
                             </a>                        
                         </div>
                         <div class="menu">
-                            <a href="#">
+                            <a href="OhMyFood-Menu2.html">
                                 <div class="menu__img">
                                     <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
                                     <div class="menu__img__new">Nouveau</div> 
@@ -102,14 +100,15 @@
                                         <p><strong>La note enchantée</strong></p>
                                         <p>Charonne</p>
                                     </div>
-                                    <div class="menu__name__like">
+                                    <div class="menu__name__like"> 
+                                        <i class="far fa-heart"></i>
                                         <i class="fas fa-heart"></i>
                                     </div>
                                 </div>
                             </a>                              
                         </div>
                         <div class="menu">
-                            <a href="#">
+                            <a href="OhMyFood-Menu3.html">
                                 <div class="menu__img">
                                     <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg">
                                 </div>
@@ -118,14 +117,15 @@
                                         <p><strong>A la française</strong></p>
                                         <p>Cité Rouge</p>
                                     </div>
-                                    <div class="menu__name__like">
+                                    <div class="menu__name__like"> 
+                                        <i class="far fa-heart"></i>
                                         <i class="fas fa-heart"></i>
                                     </div>
                                 </div>
                             </a>                                
                         </div>
                         <div class="menu">
-                            <a href="#">
+                            <a href="OhMyFood-Menu4.html">
                                 <div class="menu__img">
                                     <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg">
                                 </div>
@@ -135,6 +135,7 @@
                                         <p>Folie-Méricourt</p>
                                     </div>
                                     <div class="menu__name__like">
+                                        <i class="far fa-heart"></i>
                                         <i class="fas fa-heart"></i>
                                     </div>
                                 </div>                                
@@ -176,5 +177,5 @@
               </div> 
             </footer>
         </div>
-        </body>
-    </html>
+    </body>
+</html>

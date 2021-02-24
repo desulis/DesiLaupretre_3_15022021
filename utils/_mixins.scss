@@ -28,8 +28,8 @@
 }
 @mixin typography_textbold {
     font-family: 'Roboto';
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 700;
     color: black;
 }
 @mixin typography_symbol {
@@ -49,7 +49,6 @@
 }
 
 @mixin ahref {
-    display: flex;
     @include typography_textbold;
     border:none;
     text-decoration: none;
@@ -64,7 +63,7 @@
 }
 
 @mixin shadow {
-    -webkit-box-shadow: 0 0 20px rgb(196, 196, 196);
+    box-shadow: 0px 10px 20px #c4c4c4;
 }
 
 @mixin box {
@@ -84,7 +83,7 @@
     padding: 7px;
     justify-content: center;
     align-items: center;
-    -webkit-box-shadow: 0 0 10px rgb(196, 196, 196);    
+    box-shadow: 0px 0px 20px 5px #c4c4c4;    
 }
 
 @mixin image-menu {
@@ -101,4 +100,19 @@
 @mixin mobile-only {
     @media screen and (max-width: 1080px) {@content;}
     @media screen and (max-width: 699px) {@content;}
+}
+@mixin transform-btn {
+    transform: scale(1);
+    transition: transform 350ms;
+    &:hover {
+        transform: scale(1.12);
+        background-image:linear-gradient(to bottom right, #fc86da, #9b67db);
+    } 
+}
+@mixin transform-box {
+    transform: scale(1);
+    transition: transform 350ms;
+    &:hover {
+        transform: scale(1.05);
+    } 
 }

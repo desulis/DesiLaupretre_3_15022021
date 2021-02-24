@@ -5,10 +5,13 @@
 @import "./layout/footer";
 @import "./components/keyframes";
 
+a {
+    @include ahref;
+}
 .page {
     @include body;
     opacity: 1;
-    animation: body 1s 2s both;
+    animation: body 1s 1.5s both;
 }
 .loader {
     position: fixed;
@@ -43,9 +46,11 @@
 body {
     margin: 0;
 }
+
 .nav {
     @include flex_mobile;
     background-color: $color_background_2;
+    position: relative;
     &__location{
         @include flex_dekstop;
         background-color: $color_background_3;
@@ -73,25 +78,22 @@ body {
             padding-top: 10px;
         }
     }
-    &__explore-button {
-        overflow: hidden;
-        position: relative;
+    &__explore {
         @include flex_dekstop;
-        padding: 30px 0;
-        button {  
+        padding: 0 0 30px 0;        
+        button {
+            @include typography_sub;
+            overflow: hidden;  
+            cursor: pointer;
             background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
             color: $color_netral;
             border: transparent;
             @include shadow;
             @include button_border; 
-            padding: 10px 30px;
+            padding: 20px 40px;
             margin-bottom: 30px;
-            transition: transform 350ms;
-            &:hover {
-                transform: scale(1.12);
-                background-image: linear-gradient(to bottom right, #fc86da, #a16edf);
-            }           
-        }
+            @include transform-btn;                             
+        }              
     }        
 }        
 .filters {  
@@ -101,8 +103,10 @@ body {
     h2 {
         text-align: center;
         padding-left:10px;
-        @include mobile-only {
-            text-align: left;
+        @include typography_title;
+        margin: 20px 0 0 0;
+        @include mobile-only {            
+            text-align: left;            
         }
     }  
     &__menu {
@@ -118,21 +122,33 @@ body {
                 @include flex_dekstop;
                 @include box;
                 list-style-type: none;
-                padding: 20px;
+                padding: 20px;                
                 background-color:$color_background_2;
+                @include transform-box;
                 @include mobile-only {
                     @include flex_mobile;
                     align-items: stretch;
+                }
+                transform: scale(1);
+                transition: transform 350ms;
+                &:hover {
+                    transform: scale(1.05);
+                    background-color:#f0d8f7;
+                    color: $color_primary;
+                    i.fas {
+                        color: $color_primary;
+                    }
                 }
                 .number {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    @include typography_text;
                     background-color: $color_primary;
                     color:$color_netral ;               
                     position: absolute;
                     text-align: center;
-                    top: 17px;
+                    top: 30px;
                     left: -20px;
                     line-height: 0;
                     padding: 11px;
@@ -143,12 +159,21 @@ body {
                     -moz-border-radius: 50%;
                     -webkit-border-radius: 50%;
                 }
-                a, button, p {
-                    @include ahref;
-                    i.fas {
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: baseline;
+                    align-items: baseline;
+                    margin-left: 10px;
+                    padding: 10px 0;
+                    i.fas {                       
                         color: $color_grey;
                     }
-                }
+                    p {
+                        @include typography_textbold;
+                        margin:0 ;
+                    }                    
+                }                                               
             }
         }
     }  
@@ -159,7 +184,8 @@ body {
     @include flex_mobile;
     h2 {
         text-align: center;
-        margin: 0;
+        @include typography_title;
+        margin: 20px 0 0 0;
         @include mobile-only {
             text-align: left;
         }
@@ -176,10 +202,10 @@ body {
         }
         gap: 30px;
         .menu {
-            @include ahref;
             @include flex_mobile;
             @include box-menu;
-            flex: 1 0 0;            
+            flex: 1 0 0;
+            @include transform-box;            
             &__img {
                 img {
                     @include image-menu;
@@ -196,18 +222,39 @@ body {
                 }              
             } 
             &__name {
-                text-decoration-line: none;
                 @include flex_dekstop;
                 justify-content: space-between;
-                text-decoration: none;
                 position: relative;
-                &__description:visited {
-                   
+                padding: 5px 7px;
+                &__description p {
+                    margin:0;
+                    padding: 2px 0;
+                    gap: 10px;
+                    @include typography_text;
                 }
                 &__like {
                     position: absolute;
+                    width: 17px;
+                    height: 20px;
                     top: 30px;
                     right: 15px;
+                    transition: transform 150ms 100ms, background-color 150ms;
+                    i.fas {
+                        display: none;
+                        background: -webkit-linear-gradient($color_primary,$color_secondary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    &:hover { 
+                        transform: scale(1.10);                       
+                        i.fas {    
+                            display: block;                                                
+                        }
+                        i.far {
+                            display: none;                            
+                        }   
+                    }                   
+                                                   
                 }
             }             
         }        
