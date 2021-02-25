@@ -23,7 +23,7 @@
 @mixin typography_text {
     font-family: 'Roboto';
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
 }
 @mixin typography_textbold {
@@ -39,8 +39,9 @@
 }
 @mixin typography_footer {
     font-family: 'Roboto';
-    font-size: 15px;
+    font-size: 14px;
     color: $color_netral;
+    font-weight: 300;
 }
 @mixin flex_dekstop {
     display: flex;
@@ -92,7 +93,7 @@
     width: 100%;
     height: 130px;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: 50% 60%;
     justify-content: center;
     align-items: center;
     border-radius: 20px 20px 0px 0px;

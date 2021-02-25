@@ -5,8 +5,9 @@ footer {
         @include typography_symbol;        
     }
     .footerlist {
-        display: flex;                   
-        ul {  
+        display: flex;                           
+        ul { 
+            @include typography_footer; 
             display: flex;
             justify-content: space-between; 
             flex-direction: column;         

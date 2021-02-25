@@ -5,7 +5,9 @@
 @import "./layout/footer";
 @import "./components/keyframes";
 
-
+a {
+    text-decoration: none;
+}
 body {
     @include body();
 }
@@ -38,19 +40,54 @@ main {
     }
     &__name {
         @include flex_dekstop;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 30px;
+        position: relative;
         h2 {
+            display: flex;
             @include typography_symbol;
             color: black;
             font-size: 30px;
-            font-weight: lighter;        
+            font-weight: lighter;  
+            @include mobile-only {
+                padding-left: 20px;
+            }      
         }
         @include mobile-only {
             border-radius: 35px 35px 0 0;
             margin-top: -50px;
             background-color: $color_background_3;
+        }
+        &__like {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 17px;
+            height: 20px;
+            top: 37px;
+            right: -40px;
+            transition: transform 150ms 100ms, background-color 150ms;
+            @include mobile-only {
+                top: 37px;
+                right: 30px;
+            }
+            i.fas {
+                display: none;
+                background: -webkit-linear-gradient($color_primary,$color_secondary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            &:hover { 
+                transform: scale(1.10);                       
+                i.fas {    
+                    display: block;                                                
+                }
+                i.far {
+                    display: none;                            
+                }   
+            }                   
         }        
     }
 }
@@ -60,17 +97,22 @@ main {
     @include mobile-only {
         @include flex_mobile;
     }
-    gap: 30px;
+    gap: 30px;    
     &__detail {
         display: flex;
         flex-direction: column;
         justify-content: stretch;
         align-items: stretch; 
         gap: 20px;       
-        animation: menu 1500ms;
         @include mobile-only {
         padding: 0 20px;
         } 
+        animation: menu 1s 3s both;
+        @for $i from 1 through 3 {
+            &--#{$i} {
+                animation-delay: 1s * $i;
+            }
+        }       
         &__title {
             font-weight: 400;
             margin: 0;
