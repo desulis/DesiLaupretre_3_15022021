@@ -116,7 +116,21 @@ main {
         &__title {
             font-weight: 400;
             margin: 0;
+            display: inline-block;
+            transition: text-decoration 100ms;
+            padding-bottom: 5px;
+            position: relative;
         }
+        &__title::after {
+            content: "";
+            height: 2px;
+            width: 12%;
+            background-color: $color_tertiary;
+            position: absolute;
+            bottom: 1px;
+            left: 20px;
+            transform: translate(-50%);           
+        }        
         &__list {
             @include flex_dekstop;
             @include box;
@@ -153,20 +167,22 @@ main {
                     transform: rotate(360deg);
                 }    
             }
-            &__name{
+            &__name{               
                 display: flex;
                 flex: 1;
+                min-width: 0;
                 justify-content: space-between;
-                padding: 0 20px;
-                &__description{
-                    display: flex;
+                padding: 0 15px;
+                &__description {
+                    min-width: 0;
+                }                   
+                &__description h3, &__description p{
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                     flex-direction: column;
                     flex: 3;
-                    justify-content: baseline;
-                    align-items: baseline;
-                    h3 {
-                        margin-bottom: 0;
-                    }
+                    margin: 10px;                    
                 }
                 &__price {
                     display: flex;
@@ -188,10 +204,11 @@ main {
         button {  
             cursor: pointer;
             background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+            @include typography_sub; 
             color: $color_netral;
             border: transparent;
             @include shadow;
-            @include button_border; 
+            @include button_border;
             padding: 20px 60px;
             margin-bottom: 30px;
             transition: transform 350ms;
