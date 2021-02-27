@@ -194,15 +194,15 @@ body {
         @include flex_mobile;
     }
     gap: 30px;
-    &__list-menu {
-        flex-wrap: wrap;
+    &__list-menu {        
         @include flex_dekstop;
         @include mobile-only {
             @include flex_mobile;
         }
         gap: 30px;
         .menu {
-            @include flex_mobile;
+            display: flex;
+            flex-direction: column;
             @include box-menu;
             flex: 1 0 0;
             @include transform-box;            

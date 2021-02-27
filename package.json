@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./ohmyfood-menu.scss:./ohmyfood-menu.css"
+    "sass": "sass --watch ./ohmyfood-main.scss:./ohmyfood-main.css"
   },
   "repository": {
     "type": "git",
