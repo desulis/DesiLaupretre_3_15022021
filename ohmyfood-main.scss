@@ -87,8 +87,7 @@ body {
             cursor: pointer;
             background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
             color: $color_netral;
-            border: transparent;
-            @include shadow;
+            border: transparent;            
             @include button_border; 
             padding: 20px 40px;
             margin-bottom: 30px;
@@ -162,7 +161,7 @@ body {
                 a {
                     display: flex;
                     flex-direction: row;
-                    justify-content: baseline;
+                    justify-content:flex-start;
                     align-items: baseline;
                     margin-left: 10px;
                     padding: 10px 0;
@@ -238,7 +237,7 @@ body {
                     height: 20px;
                     top: 20px;
                     right: 17px;
-                    transition: transform 150ms 100ms, background-color 150ms;
+                    transition: transform 450ms, background-color 300ms 150ms;
                     i.fas {
                         display: none;
                         background: -webkit-linear-gradient($color_primary,$color_secondary);
@@ -248,7 +247,7 @@ body {
                     &:hover { 
                         transform: scale(1.10);                       
                         i.fas {    
-                            display: block;                                                
+                            display: block;                                               
                         }
                         i.far {
                             display: none;                            

@@ -27,7 +27,6 @@ header {
   background-color: #9356DC;
   color: #fff;
   box-shadow: 0px 10px 20px #c4c4c4;
-  border-style: solid 1px #9356DC;
   border-radius: 25px;
   padding: 10px;
   box-shadow: 0px 10px 20px #c4c4c4;
@@ -168,7 +167,6 @@ a {
   margin: auto;
   box-sizing: content-box;
   width: 100%;
-  max-width: 1920px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,8 +279,6 @@ body {
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: #fff;
   border: transparent;
-  box-shadow: 0px 10px 20px #c4c4c4;
-  border-style: solid 1px #9356DC;
   border-radius: 25px;
   padding: 10px;
   box-shadow: 0px 10px 20px #c4c4c4;
@@ -417,7 +413,7 @@ body {
 .filters__menu__list li a {
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: flex-start;
   align-items: baseline;
   margin-left: 10px;
   padding: 10px 0;
@@ -560,7 +556,7 @@ body {
   height: 20px;
   top: 20px;
   right: 17px;
-  transition: transform 150ms 100ms, background-color 150ms;
+  transition: transform 450ms, background-color 300ms 150ms;
 }
 .restaurant__list-menu .menu__name__like i.fas {
   display: none;

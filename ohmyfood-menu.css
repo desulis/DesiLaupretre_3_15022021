@@ -27,7 +27,6 @@ header {
   background-color: #9356DC;
   color: #fff;
   box-shadow: 0px 10px 20px #c4c4c4;
-  border-style: solid 1px #9356DC;
   border-radius: 25px;
   padding: 10px;
   box-shadow: 0px 10px 20px #c4c4c4;
@@ -161,7 +160,6 @@ body {
   margin: auto;
   box-sizing: content-box;
   width: 100%;
-  max-width: 1920px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +167,7 @@ body {
 }
 
 header .return {
-  justify-content: baseline;
+  justify-content: flex-start;
   margin-right: auto;
 }
 header .logo {
@@ -239,11 +237,13 @@ main {
 @media screen and (max-width: 1080px) {
   .title__name h2 {
     padding-left: 20px;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 699px) {
   .title__name h2 {
     padding-left: 20px;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 1080px) {
@@ -269,17 +269,17 @@ main {
   height: 20px;
   top: 37px;
   right: -40px;
-  transition: transform 150ms 100ms, background-color 150ms;
+  transition: transform 350ms 100ms, background-color 250ms;
 }
 @media screen and (max-width: 1080px) {
   .title__name__like {
-    top: 37px;
+    top: 30px;
     right: 30px;
   }
 }
 @media screen and (max-width: 699px) {
   .title__name__like {
-    top: 37px;
+    top: 30px;
     right: 30px;
   }
 }
@@ -373,7 +373,7 @@ main {
   align-content: center;
   box-shadow: 0px 10px 20px #c4c4c4;
   border-radius: 15px;
-  padding: none;
+  padding: 0;
   width: 350px;
   list-style-type: none;
   overflow: hidden;
@@ -463,7 +463,6 @@ main {
   color: #fff;
   border: transparent;
   box-shadow: 0px 10px 20px #c4c4c4;
-  border-style: solid 1px #9356DC;
   border-radius: 25px;
   padding: 10px;
   box-shadow: 0px 10px 20px #c4c4c4;

@@ -14,7 +14,7 @@ body {
 
 header {
     .return {
-        justify-content: baseline;
+        justify-content: flex-start;
         margin-right: auto;
     }
     .logo {
@@ -52,6 +52,7 @@ main {
             font-weight: lighter;  
             @include mobile-only {
                 padding-left: 20px;
+                font-size: 25px;
             }      
         }
         @include mobile-only {
@@ -68,9 +69,9 @@ main {
             height: 20px;
             top: 37px;
             right: -40px;
-            transition: transform 150ms 100ms, background-color 150ms;
+            transition: transform 350ms 100ms, background-color 250ms;
             @include mobile-only {
-                top: 37px;
+                top: 30px;
                 right: 30px;
             }
             i.fas {
@@ -134,7 +135,7 @@ main {
         &__list {
             @include flex_dekstop;
             @include box;
-            padding: none;
+            padding: 0;
             width: 350px;
             list-style-type: none;
             overflow: hidden;
