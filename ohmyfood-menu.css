@@ -299,6 +299,10 @@ main {
   display: none;
 }
 
+p, h3 {
+  font-family: "Roboto";
+}
+
 .menu {
   width: 100%;
   display: flex;

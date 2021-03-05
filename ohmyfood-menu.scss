@@ -92,6 +92,9 @@ main {
         }        
     }
 }
+p, h3 {
+    font-family: 'Roboto';
+}
 .menu {
     width: 100%;
     @include flex_dekstop;
