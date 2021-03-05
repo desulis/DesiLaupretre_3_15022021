@@ -154,6 +154,7 @@ footer .footerlist ul li a i.fas, footer .footerlist ul p i.fas {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 
 body {
