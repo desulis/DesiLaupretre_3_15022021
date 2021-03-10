@@ -216,11 +216,7 @@ p, h3 {
             @include button_border;
             padding: 20px 60px;
             margin-bottom: 30px;
-            transition: transform 350ms;
-            &:hover {
-                transform: scale(1.13);
-                background-image: linear-gradient(to bottom right, #fc90dd, #a979e4);
-            }                      
+            @include transform-btn;
         }
     }        
 }

@@ -104,7 +104,8 @@
     transition: transform 350ms;
     &:hover {
         transform: scale(1.12);
-        background-image:linear-gradient(to bottom right, #fc86da, #9b67db);
+        background-image:linear-gradient(to bottom right, #fa94dd, #a678df);
+        box-shadow: 0px 10px 20px #b1b0b0;
     } 
 }
 @mixin transform-box {
